@@ -11,8 +11,8 @@ export default function Home() {
       </div>
       
       {/* SECCIÓN FILOSOFÍA (Minimalista) */}
-      <section id="nosotros" className="w-full flex justify-center py-40 md:py-72">
-        <div className="max-w-[1200px] w-full px-10 md:px-12 text-center">
+      <section id="nosotros" className="w-full flex justify-center py-40 md:py-72 px-12 md:px-0">
+        <div className="max-w-[1200px] w-full text-center">
           <motion.h2 
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -28,13 +28,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="featured" className="bg-white w-full flex justify-center py-32 md:py-64">
-        <Featured />
+      <section id="featured" className="bg-white w-full flex justify-center py-32 md:py-64 px-12 md:px-0">
+        <div className="max-w-[1400px] w-full">
+           <Featured />
+        </div>
       </section>
 
       {/* SECCIÓN SOBRE MARCELA (FOUNDER) */}
-      <section id="marcela" className="bg-[#F8F8F8] w-full flex justify-center py-32 md:py-64">
-        <div className="max-w-[1400px] w-full mx-auto px-10 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-40 items-center">
+      <section id="marcela" className="bg-[#F8F8F8] w-full flex justify-center py-32 md:py-64 px-12 md:px-0">
+        <div className="max-w-[1400px] w-full grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-40 items-center">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -69,8 +71,8 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN EXPERIENCIA (Call to action) */}
-      <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden bg-white py-40 md:py-80">
-        <div className="max-w-[1200px] w-full px-10 md:px-12 flex flex-col items-center">
+      <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden bg-white py-40 md:py-80 px-12 md:px-0">
+        <div className="max-w-[1200px] w-full flex flex-col items-center">
           <span className="text-[9px] md:text-[10px] uppercase tracking-[0.6em] text-black/30 mb-8 md:mb-12 font-bold">Experiencia Exclusiva</span>
           <h2 className="text-5xl md:text-8xl lg:text-9xl font-serif text-black mb-16 md:mb-24 uppercase tracking-tighter leading-[0.9]">Visita nuestro <br className="md:hidden" /> atelier digital</h2>
           <motion.a 

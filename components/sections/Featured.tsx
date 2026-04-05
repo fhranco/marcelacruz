@@ -7,7 +7,7 @@ export default function Featured() {
   const featuredItems = products.slice(0, 3);
 
   return (
-    <div className="max-w-[1400px] w-full mx-auto px-10 md:px-12 bg-white">
+    <div className="max-w-[1400px] w-full mx-auto md:px-12 bg-white">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
         <div className="flex flex-col gap-8">
           <motion.span 

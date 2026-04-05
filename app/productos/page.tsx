@@ -20,7 +20,7 @@ export default function ProductosPage() {
   );
 
   if (error) return <p className="p-8 text-red-600">⚠️ Error al cargar productos.</p>;
-  if (!data) return <p className="p-8">Cargando productos…</p>;
+  if (!data) return <p className="p-8 font-serif uppercase tracking-widest text-[10px] text-center py-40">Buscando objetos esenciales...</p>;
 
   const { data: productos, total } = data;
 
@@ -33,8 +33,8 @@ export default function ProductosPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
       {/* HEADER SECCIÓN */}
-      <section className="w-full flex justify-center" style={{ padding: '300px 0 200px 0' }}>
-        <div className="max-w-[1100px] w-full px-10 md:px-0 flex flex-col items-center text-center">
+      <section className="w-full flex justify-center py-40 md:py-60 px-12">
+        <div className="max-w-[1100px] w-full flex flex-col items-center text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,8 +60,8 @@ export default function ProductosPage() {
       </section>
 
       {/* FILTER BAR */}
-      <section className="border-y border-black/5 bg-white/95 backdrop-blur-md sticky top-[80px] z-[900] w-full flex justify-center">
-        <div className="max-w-[1100px] w-full mx-auto px-10 md:px-0 flex flex-wrap items-center justify-center gap-10 md:gap-20 py-8 overflow-x-auto no-scrollbar">
+      <section className="border-y border-black/5 bg-white/95 backdrop-blur-md sticky top-[80px] z-[900] w-full flex justify-center px-12">
+        <div className="max-w-[1100px] w-full mx-auto flex flex-wrap items-center justify-center gap-10 md:gap-20 py-8 overflow-x-auto no-scrollbar">
           {CATEGORIAS.map((cat) => (
             <button
               key={cat}
@@ -77,9 +77,9 @@ export default function ProductosPage() {
       </section>
 
       {/* PRODUCT GRID */}
-      <section className="w-full flex justify-center pb-48 pt-32">
-        <div className="max-w-[1100px] w-full mx-auto px-10 md:px-0">
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+      <section className="w-full flex justify-center pb-48 pt-32 px-12">
+        <div className="max-w-[1100px] w-full mx-auto">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 md:gap-16">
             <AnimatePresence mode="popLayout">
               {filtered.map((product: any) => (
                 <ProductCard key={product.id} product={product} />
@@ -91,12 +91,14 @@ export default function ProductosPage() {
 
       {/* LOAD MORE */}
       {hasMore && (
-        <button
-          onClick={() => setPage((p) => p + 1)}
-          className="mt-12 px-8 py-3 bg-black text-white uppercase tracking-widest hover:bg-black/90 transition"
-        >
-          {isValidating ? 'Cargando…' : 'Ver más'}
-        </button>
+        <div className="pb-32">
+          <button
+            onClick={() => setPage((p) => p + 1)}
+            className="px-16 py-6 bg-black text-white text-[10px] uppercase tracking-[0.4em] font-bold shadow-2xl hover:bg-black/90 transition-all active:scale-95"
+          >
+            {isValidating ? 'Cargando…' : 'Ver más objetos'}
+          </button>
+        </div>
       )}
 
       {/* EMPTY STATE */}

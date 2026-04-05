@@ -34,7 +34,7 @@ export default function Navbar() {
       "fixed top-0 left-0 w-full h-[70px] md:h-[90px] z-[1000] transition-all duration-700 flex justify-center",
       isScrolled ? "bg-white/95 backdrop-blur-md border-b border-black/5" : "bg-transparent"
     )}>
-      <div className="max-w-[1400px] w-full h-full px-10 md:px-12 flex items-center justify-between relative">
+      <div className="max-w-[1400px] w-full h-full px-12 md:px-12 flex items-center justify-between relative">
         {/* LEFT: LINKS (Desktop) */}
         <div className={cn(
           "hidden lg:flex items-center gap-10 text-[9px] uppercase tracking-[0.3em] font-bold transition-colors duration-500",

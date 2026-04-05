@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
 
             {/* CONTENT */}
-            <div className="relative z-10 text-center px-8 md:px-12 max-w-[1400px] w-full flex flex-col items-center pt-24">
+            <div className="relative z-10 text-center px-12 md:px-12 max-w-[1400px] w-full flex flex-col items-center pt-24">
                 <motion.div 
                     ref={labelRef}
                     initial={{ opacity: 0, y: 10 }}
