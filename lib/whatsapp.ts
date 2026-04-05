@@ -8,7 +8,7 @@ export interface CartItem {
 }
 
 export function generarMensajeWhatsApp(carrito: CartItem[], total: number): string {
-  const numero = "56987654321"; // Reemplazar con el número real de Marcelacruz
+  const numero = "56930313443"; // Official WhatsApp Marcelacruz
   
   if (carrito.length === 0) return "#";
 

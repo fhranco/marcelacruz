@@ -115,8 +115,8 @@ export default function Navbar() {
             <div className="mt-auto flex flex-col gap-4 text-[9px] uppercase tracking-[0.3em] font-bold text-black/30">
                <span>© 2026 Marcelacruz Atelier</span>
                <div className="flex gap-6">
-                  <span className="hover:text-black cursor-pointer">Instagram</span>
-                  <span className="hover:text-black cursor-pointer">WhatsApp</span>
+                  <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black cursor-pointer">Instagram</a>
+                  <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black cursor-pointer">WhatsApp</a>
                </div>
             </div>
           </motion.div>

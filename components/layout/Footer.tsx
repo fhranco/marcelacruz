@@ -36,7 +36,7 @@ export default function Footer() {
               Nuestra boutique digital está diseñada para ofrecerte una experiencia de lujo personalizada. Si necesitas asistencia, nuestro equipo está a un clic de distancia.
             </p>
             <button 
-              onClick={() => window.open('https://wa.me/yournumber', '_blank')}
+              onClick={() => window.open('https://wa.me/56930313443', '_blank')}
               className="w-fit text-black border-b border-black/20 pb-2 hover:border-black transition-all text-[11px] uppercase tracking-[0.2em] font-bold mt-4"
             >
               Asesoría Personalizada WhatsApp
