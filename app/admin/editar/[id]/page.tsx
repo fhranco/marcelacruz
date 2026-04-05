@@ -62,9 +62,13 @@ export default function EditProduct() {
       precio: parseInt(formData.precio as string),
       galeria: formData.galeria.filter((img: string) => img.trim() !== '')
     };
+    const auth = localStorage.getItem('ma_admin_auth');
     const res = await fetch('/api/admin/products', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth}`
+      },
       body: JSON.stringify(finalData),
     });
     if (res.ok) router.push('/admin');

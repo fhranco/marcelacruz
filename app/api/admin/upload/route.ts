@@ -2,7 +2,17 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+const MASTER_KEY = "ma_secret_2026";
+
+function isAuthorized(request: Request) {
+  const authHeader = request.headers.get('Authorization');
+  return authHeader === `Bearer ${MASTER_KEY}`;
+}
+
 export async function POST(request: Request) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File;

@@ -4,7 +4,14 @@ import path from 'path';
 
 const DATA_PATH = path.join(process.cwd(), 'data', 'products.json');
 
-// Get all products
+const MASTER_KEY = "ma_secret_2026"; // Secret Master Key for Marcelacruz Admin
+
+function isAuthorized(request: Request) {
+  const authHeader = request.headers.get('Authorization');
+  return authHeader === `Bearer ${MASTER_KEY}`;
+}
+
+// Get all products (Public)
 export async function GET() {
   try {
     const data = fs.readFileSync(DATA_PATH, 'utf8');
@@ -14,8 +21,11 @@ export async function GET() {
   }
 }
 
-// Add/Update product
+// Add/Update product (SECURE)
 export async function POST(request: Request) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ error: 'Unauthorized Access Denied' }, { status: 401 });
+  }
   try {
     const newProduct = await request.json();
     const data = fs.readFileSync(DATA_PATH, 'utf8');
@@ -41,8 +51,11 @@ export async function POST(request: Request) {
   }
 }
 
-// Delete product
+// Delete product (SECURE)
 export async function DELETE(request: Request) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json({ error: 'Unauthorized Access Denied' }, { status: 401 });
+  }
   try {
     const { id } = await request.json();
     const data = fs.readFileSync(DATA_PATH, 'utf8');

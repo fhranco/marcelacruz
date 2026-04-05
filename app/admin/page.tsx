@@ -19,8 +19,13 @@ export default function AdminDashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('¿Estás seguro de eliminar este producto?')) return;
+    const auth = localStorage.getItem('ma_admin_auth');
     const res = await fetch('/api/admin/products', {
       method: 'DELETE',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth}`
+      },
       body: JSON.stringify({ id }),
     });
     if (res.ok) fetchProducts();

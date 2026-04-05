@@ -26,8 +26,12 @@ export default function ImageUpload({ label, value, onChange, className = '', as
     formData.append('file', file);
 
     try {
+      const auth = localStorage.getItem('ma_admin_auth');
       const res = await fetch('/api/admin/upload', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${auth}`
+        },
         body: formData,
       });
       const data = await res.json();
