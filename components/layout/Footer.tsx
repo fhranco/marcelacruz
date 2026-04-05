@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full pt-24 md:pt-48 overflow-hidden bg-white mt-24 md:mt-48 flex justify-center border-t border-black/5 pb-24 md:pb-48">
-      <div className="max-w-[1400px] w-full mx-auto px-8 md:px-12 relative overflow-hidden">
+      <div className="max-w-[1400px] w-full mx-auto px-10 md:px-12 relative overflow-hidden">
         
         {/* LOGO SECTION */}
         <div className="flex flex-col items-center text-center mb-32 md:mb-48">
