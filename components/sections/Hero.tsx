@@ -82,7 +82,7 @@ export default function Hero() {
                 
                 <h1 
                     ref={titleRef}
-                    className="text-6xl sm:text-7xl md:text-[110px] lg:text-[160px] font-serif text-black leading-[0.8] mb-16 md:mb-24 flex flex-col -tracking-[0.06em] uppercase"
+                    className="text-5xl sm:text-7xl md:text-[110px] lg:text-[160px] font-serif text-black leading-[0.8] mb-16 md:mb-24 flex flex-col -tracking-[0.06em] uppercase"
                 >
                     <span>Elegancia</span>
                     <span className="italic pl-0 md:pl-32 lg:pl-56 low-opacity text-black/40">Pura</span>
