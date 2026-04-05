@@ -16,10 +16,10 @@ export default function AdminLogin() {
     setLoading(true);
     setError('');
 
-    // Hardcoded for Marcelacruz Atelier
-    if (user === 'admin' && pass === 'MaC@2026') {
+    // Unified Security Shield for Marcelacruz
+    if (user === 'admin' && pass === 'ma_secret_2026') {
       setTimeout(() => {
-        localStorage.setItem('ma_admin_auth', 'true');
+        localStorage.setItem('ma_admin_auth', 'ma_secret_2026'); // Important: This is also our Bearer token
         router.push('/admin');
       }, 1000);
     } else {
