@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1",
+    "slug": "anillo-eterno-oro-18k",
+    "nombre": "Anillo Eterno Oro 18k",
+    "precio": 249000,
+    "imagen": "/images/jewelry.png",
+    "categoria": "Joyas",
+    "descripcion": "Anillo de oro sólido de 18 quilates, diseñado bajo la filosofía minimalista de Marcelacruz.",
+    "nuevo": true
+  },
+  {
+    "id": "2",
+    "slug": "anillo-aura-plata-925",
+    "nombre": "Anillo Aura Plata 925",
+    "precio": 85000,
+    "imagen": "/images/anillo-aura.png",
+    "categoria": "Joyas",
+    "descripcion": "Anillo de plata 925 con diseño minimalista y acabado pulido, una pieza esencial para el día a día.",
+    "nuevo": true
+  },
+  {
+    "id": "3",
+    "slug": "collar-velo-de-plata",
+    "nombre": "Collar Velo de Plata",
+    "precio": 125000,
+    "imagen": "/images/collar-velo.png",
+    "categoria": "Joyas",
+    "descripcion": "Cadena delicada de plata 925 con un dije geométrico minimalista, elegancia en su mínima expresión.",
+    "nuevo": true,
+    "galeria": [
+      "https://images.remote.com/testhttps://images.remote.com/test-gallery.img-gallery.img",
+      "/images/jewelry.png/images/productos/extra-1.png"
+    ],
+    "enStock": true
+  },
+  {
+    "id": "4",
+    "slug": "pulsera-lazo-argenteo",
+    "nombre": "Pulsera Lazo Argénteo",
+    "precio": 95000,
+    "imagen": "/images/pulsera-lazo.png",
+    "categoria": "Joyas",
+    "descripcion": "Pulsera de eslabones finos en plata 925, diseñada para la mujer que valora la sutileza.",
+    "nuevo": false
+  },
+  {
+    "id": "5",
+    "slug": "difusor-zen-garden",
+    "nombre": "Difusor Zen Garden",
+    "precio": 45000,
+    "imagen": "/images/difusor-zen.png",
+    "categoria": "Aromas",
+    "descripcion": "Difusor de aceites esenciales con varitas de bambú, aroma a té verde y jazmín.",
+    "nuevo": true
+  },
+  {
+    "id": "6",
+    "slug": "mikado-brisa-serena",
+    "nombre": "Mikado Brisa Serena",
+    "precio": 38000,
+    "imagen": "/images/mikado-brisa.png",
+    "categoria": "Aromas",
+    "descripcion": "Aritmatizador de ambiente con varas de madera, notas cítricas y amaderadas.",
+    "nuevo": false
+  },
+  {
+    "id": "7",
+    "slug": "spray-noche-de-luna",
+    "nombre": "Spray Noche de Luna",
+    "precio": 25000,
+    "imagen": "/images/spray-noche.png",
+    "categoria": "Aromas",
+    "descripcion": "Spray aromático para textiles y ambientes, con notas de lavanda y sándalo.",
+    "nuevo": true
+  },
+  {
+    "id": "8",
+    "slug": "perfume-aurora",
+    "nombre": "Perfume Aurora",
+    "precio": 185000,
+    "imagen": "/images/aroma.png",
+    "categoria": "Aromas",
+    "descripcion": "Notas de sándalo, ámbar y piel. Una fragancia que cuenta una historia personal.",
+    "nuevo": false
+  },
+  {
+    "nombre": "Gargantilla Aurora",
+    "slug": "gargantilla-aurora",
+    "precio": 155000,
+    "imagen": "/images/jewelry.png",
+    "galeria": [
+      "/images/collar-velo.png"
+    ],
+    "categoria": "Joyas",
+    "descripcion": "Una pieza de elegancia atemporal.",
+    "nuevo": true,
+    "enStock": true,
+    "id": "9"
+  }
+]
