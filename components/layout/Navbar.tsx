@@ -86,40 +86,44 @@ export default function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: '-100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-[3000] flex flex-col p-12 md:p-24 overflow-hidden"
+            className="fixed inset-0 bg-white z-[3000] flex flex-col p-16 md:p-24 pt-32 md:pt-40 overflow-hidden"
           >
-            <div className="flex justify-between items-center mb-24">
-              <span className="text-[11px] uppercase tracking-[0.5em] font-bold text-black/40">Marcelacruz Atelier</span>
+            <div className="flex justify-between items-start mb-24">
+              <div className="flex flex-col gap-2">
+                <span className="text-[12px] uppercase tracking-[0.6em] font-bold text-black border-b border-black/10 pb-2">Atelier</span>
+                <span className="text-[9px] uppercase tracking-[0.4em] font-bold text-black/30">Marcelacruz</span>
+              </div>
               <button 
-                className="text-black p-4 bg-black/5 rounded-full hover:rotate-90 transition-transform duration-500"
+                className="text-black p-5 bg-black/5 rounded-full hover:rotate-90 transition-transform duration-500 shadow-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Cerrar Menú"
               >
-                <X size={32} strokeWidth={1} />
+                <X size={36} strokeWidth={0.8} />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-12 md:gap-16 mt-12">
-              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
+            <nav className="flex flex-col gap-12 md:gap-16 mt-20">
+              <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
                 <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Joyas</Link>
               </motion.div>
-              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
+              <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
                 <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Aromas</Link>
               </motion.div>
-              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+              <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
                 <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Colección</Link>
               </motion.div>
-              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="mt-16 border-t border-black/5 pt-16">
-                <Link href="/#nosotros" className="text-sm uppercase tracking-[0.5em] font-bold text-black/40 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Sobre el Atelier</Link>
+              <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="mt-24 border-t border-black/5 pt-16">
+                <Link href="/#nosotros" className="text-base uppercase tracking-[0.5em] font-bold text-black/40 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Sobre el Atelier</Link>
               </motion.div>
             </nav>
 
-            <div className="mt-auto flex flex-col gap-6 text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 pb-12">
-               <div className="flex flex-wrap gap-10">
+            <div className="mt-auto flex flex-col gap-8 text-[11px] uppercase tracking-[0.4em] font-bold text-black/30 pb-16">
+               <div className="flex flex-wrap gap-12 border-b border-black/5 pb-8">
                   <a href="https://instagram.com" target="_blank" className="hover:text-black transition-colors">Instagram</a>
                   <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black transition-colors">WhatsApp</a>
-                  <a href="/admin/login" className="hover:text-black transition-colors">Acceso Interno</a>
+                  <a href="/admin/login" className="hover:text-black transition-colors">Acceso</a>
                </div>
-               <span className="text-[9px]">© 2026 Marcelacruz Atelier — Todos los derechos reservados</span>
+               <span className="text-[10px] leading-relaxed">© 2026 Marcelacruz Atelier — Boutique Digital de Lujo. <br/> Todos los derechos reservados.</span>
             </div>
           </motion.div>
         )}
