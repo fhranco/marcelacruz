@@ -31,9 +31,9 @@ export default function ProductosPage() {
   const hasMore = page * 12 < Math.min(total, MAX_ITEMS);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center">
+    <div className="min-h-screen bg-white flex flex-col items-center overflow-x-hidden">
       {/* HEADER SECCIÓN */}
-      <section className="w-full flex justify-center py-40 md:py-60 px-12">
+      <section className="w-full flex justify-center py-32 md:py-60 px-12">
         <div className="max-w-[1100px] w-full flex flex-col items-center text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -59,30 +59,35 @@ export default function ProductosPage() {
         </div>
       </section>
 
-      {/* FILTER BAR */}
-      <section className="border-y border-black/5 bg-white/95 backdrop-blur-md sticky top-[80px] z-[900] w-full flex justify-center px-12">
-        <div className="max-w-[1100px] w-full mx-auto flex flex-wrap items-center justify-center gap-10 md:gap-20 py-8 overflow-x-auto no-scrollbar">
+      {/* FILTER BAR (Sticky beneath Navbar) */}
+      <section className="border-y border-black/5 bg-white/95 backdrop-blur-md sticky top-[70px] md:top-[90px] z-[900] w-full flex justify-center px-12 md:px-0">
+        <div className="max-w-[1100px] w-full mx-auto flex flex-nowrap items-center justify-start md:justify-center gap-10 md:gap-20 py-8 overflow-x-auto no-scrollbar scroll-smooth">
           {CATEGORIAS.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategoriaActiva(cat)}
-              className={`text-[10px] uppercase tracking-[0.2em] font-bold transition-all relative py-2 ${
+              className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative py-2 whitespace-nowrap shrink-0 ${
                 categoriaActiva === cat ? 'text-black' : 'text-black/30 hover:text-black/60'
               }`}
             >
               {cat}
+              {categoriaActiva === cat && (
+                <motion.div layoutId="activeCat" className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-black" />
+              )}
             </button>
           ))}
         </div>
       </section>
 
-      {/* PRODUCT GRID */}
-      <section className="w-full flex justify-center pb-48 pt-32 px-12">
+      {/* PRODUCT GRID (Forced margins) */}
+      <section className="w-full flex justify-center pb-48 pt-24 px-12">
         <div className="max-w-[1100px] w-full mx-auto">
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 md:gap-16">
             <AnimatePresence mode="popLayout">
               {filtered.map((product: any) => (
-                <ProductCard key={product.id} product={product} />
+                <div key={product.id} className="w-full overflow-hidden">
+                   <ProductCard product={product} />
+                </div>
               ))}
             </AnimatePresence>
           </motion.div>
@@ -91,10 +96,10 @@ export default function ProductosPage() {
 
       {/* LOAD MORE */}
       {hasMore && (
-        <div className="pb-32">
+        <div className="pb-32 px-12 w-full flex justify-center">
           <button
             onClick={() => setPage((p) => p + 1)}
-            className="px-16 py-6 bg-black text-white text-[10px] uppercase tracking-[0.4em] font-bold shadow-2xl hover:bg-black/90 transition-all active:scale-95"
+            className="w-full max-w-sm px-16 py-6 bg-black text-white text-[10px] uppercase tracking-[0.4em] font-bold shadow-2xl hover:bg-black/90 transition-all active:scale-95"
           >
             {isValidating ? 'Cargando…' : 'Ver más objetos'}
           </button>
@@ -103,7 +108,7 @@ export default function ProductosPage() {
 
       {/* EMPTY STATE */}
       {filtered.length === 0 && (
-        <div className="py-40 text-center">
+        <div className="py-40 text-center px-12">
           <p className="text-[12px] uppercase font-bold tracking-widest text-black/20">
             Próximamente nuevos productos…
           </p>

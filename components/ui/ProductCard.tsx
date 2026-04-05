@@ -44,31 +44,31 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* BADGES */}
           {product.nuevo && (
-            <div className="absolute top-6 left-6 px-4 py-2 bg-black text-white text-[10px] uppercase tracking-[0.4em] font-bold shadow-xl">
+            <div className="absolute top-8 left-8 px-5 py-3 bg-black text-white text-[11px] uppercase tracking-[0.5em] font-bold shadow-2xl">
               NUEVO
             </div>
           )}
 
           {/* MOBILE QUICK ADD (ALWAYS VISIBLE OR OVERLAY) */}
-          <div className="absolute bottom-6 right-6 z-20">
+          <div className="absolute bottom-8 right-8 z-20">
              <button 
               onClick={handleAdd}
-              className="w-12 h-12 bg-black text-white flex items-center justify-center hover:bg-black/80 transition-all rounded-full shadow-2xl active:scale-90"
+              className="w-14 h-14 bg-black text-white flex items-center justify-center hover:bg-black/80 transition-all rounded-full shadow-2xl active:scale-[0.85]"
              >
-               <Plus size={20} strokeWidth={1.5} />
+               <Plus size={24} strokeWidth={1.5} />
              </button>
           </div>
         </div>
 
         {/* PRODUCT INFO - HIGHER IMPACT */}
-        <div className="flex flex-col gap-4 text-center items-center px-4">
-          <span className="text-[11px] uppercase tracking-[0.5em] text-black/30 font-bold">{product.categoria}</span>
-          <h3 className="text-[20px] font-bold uppercase tracking-tight text-black group-hover:italic transition-all duration-500">
+        <div className="flex flex-col gap-6 text-center items-center px-6">
+          <span className="text-[12px] uppercase tracking-[0.6em] text-black/30 font-bold mb-2">{product.categoria}</span>
+          <h3 className="text-[22px] font-bold uppercase tracking-tight text-black group-hover:italic transition-all duration-700 leading-tight">
             {product.nombre}
           </h3>
-          <div className="flex flex-col items-center gap-4 w-full">
-            <div className="h-[1px] w-12 bg-black/5" />
-            <span className="text-[16px] font-bold text-black tracking-widest">
+          <div className="flex flex-col items-center gap-6 w-full">
+            <div className="h-[1px] w-16 bg-black/10" />
+            <span className="text-[18px] font-bold text-black tracking-[0.3em]">
               ${product.precio.toLocaleString('es-CL')}
             </span>
           </div>
