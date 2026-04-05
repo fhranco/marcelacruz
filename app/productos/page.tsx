@@ -33,12 +33,12 @@ export default function ProductosPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* HEADER SECCIÓN (CON MÁS AIRE PARA EVITAR SOLAPAMIENTO) */}
-      <section className="w-full flex justify-center pt-56 md:pt-72 pb-32 px-12">
+      <section className="w-full flex justify-center pt-80 md:pt-72 pb-24 px-12">
         <div className="max-w-[1100px] w-full flex flex-col items-center text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] uppercase tracking-[0.5em] text-black/30 font-bold mb-8"
+            className="text-[10px] uppercase tracking-[0.4em] text-black/30 font-bold mb-10"
           >
             Curated Collection
           </motion.span>
@@ -46,7 +46,7 @@ export default function ProductosPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-8xl font-serif text-black uppercase tracking-tighter leading-tight"
+            className="text-4xl md:text-8xl font-serif text-black uppercase tracking-tighter leading-[0.9]"
           >
             Essential Objects
           </motion.h2>
@@ -54,20 +54,20 @@ export default function ProductosPage() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.5, ease: 'circOut' }}
-            className="h-[1px] w-32 bg-black/10 mt-12"
+            className="h-[1px] w-32 bg-black/10 mt-12 md:mt-16"
           />
         </div>
       </section>
 
-      {/* FILTER BAR (FORZANDO STICKY Y Z-INDEX) */}
+      {/* FILTER BAR (PERSISTENTE) */}
       <section className="sticky top-[70px] md:top-[90px] z-[950] w-full border-y border-black/5 bg-white/95 backdrop-blur-md">
         <div className="max-w-[1100px] w-full mx-auto px-12 md:px-0">
-          <div className="flex flex-nowrap items-center justify-start md:justify-center gap-10 md:gap-20 py-8 overflow-x-auto no-scrollbar scroll-smooth">
+          <div className="flex flex-nowrap items-center justify-start md:justify-center gap-12 md:gap-24 py-10 overflow-x-auto no-scrollbar scroll-smooth">
             {CATEGORIAS.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategoriaActiva(cat)}
-                className={`text-[11px] uppercase tracking-[0.4em] font-bold transition-all relative py-2 whitespace-nowrap shrink-0 ${
+                className={`text-[12px] uppercase tracking-[0.4em] font-bold transition-all relative py-2 whitespace-nowrap shrink-0 ${
                   categoriaActiva === cat ? 'text-black' : 'text-black/30 hover:text-black/60'
                 }`}
               >
@@ -101,7 +101,7 @@ export default function ProductosPage() {
         <div className="pb-40 px-12 w-full flex justify-center">
           <button
             onClick={() => setPage((p) => p + 1)}
-            className="w-full max-w-sm px-16 py-8 bg-black text-white text-[11px] uppercase tracking-[0.5em] font-bold shadow-2xl hover:bg-black/90 transition-all active:scale-[0.98] flex items-center justify-center gap-4"
+            className="w-full max-w-sm px-16 py-8 bg-black text-white text-[12px] uppercase tracking-[0.5em] font-bold shadow-2xl hover:bg-black/90 transition-all active:scale-[0.98] flex items-center justify-center gap-4"
           >
             {isValidating ? 'Preparando más objetos...' : 'Explorar más de la colección'}
           </button>
@@ -111,7 +111,7 @@ export default function ProductosPage() {
       {/* EMPTY STATE */}
       {filtered.length === 0 && (
         <div className="py-64 text-center px-12">
-          <p className="text-[13px] uppercase font-bold tracking-[0.4em] text-black/20 italic">
+          <p className="text-[14px] uppercase font-bold tracking-[0.4em] text-black/20 italic">
             Estamos curando nuevas piezas para esta selección…
           </p>
         </div>

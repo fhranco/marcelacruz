@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
 
         {/* CENTER: LOGO */}
-        <Link href="/" className="absolute left-1/2 -translate-x-1/2 text-base md:text-xl font-serif tracking-[0.7em] uppercase text-black font-bold text-center whitespace-nowrap">
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 text-[10px] sm:text-base md:text-xl font-serif tracking-[0.2em] sm:tracking-[0.7em] uppercase text-black font-bold text-center whitespace-nowrap">
           Marcelacruz
         </Link>
 
