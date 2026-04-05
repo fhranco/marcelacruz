@@ -95,7 +95,16 @@ h1, h2, h3, h4, .serif {
   border: 0.5px solid var(--color-gold);
 }
 
-.reveal-text {
-  opacity: 0;
-  transform: translateY(20px);
+
+/* FORCE LUXURY MARGINS (Mobile & Global) */
+.px-12 {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .md\:px-12 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
 }
