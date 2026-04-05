@@ -51,18 +51,18 @@ export default function Navbar() {
         </Link>
 
         {/* RIGHT: ACTIONS */}
-        <div className="flex items-center gap-6 md:gap-10 text-black">
-          <button className="hidden sm:block hover:opacity-40 transition-opacity cursor-pointer text-[9px] uppercase tracking-[0.3em] font-bold">Cuenta</button>
+        <div className="flex items-center gap-10 md:gap-14 text-black">
+          <button className="hidden sm:block hover:opacity-40 transition-opacity cursor-pointer text-[10px] uppercase tracking-[0.4em] font-bold">Cuenta</button>
           
           <button 
             onClick={() => setIsOpen(true)}
-            className="relative hover:opacity-40 transition-opacity cursor-pointer flex items-center gap-3"
+            className="relative hover:opacity-40 transition-opacity cursor-pointer flex items-center gap-4"
           >
-            <span className="hidden sm:inline text-[9px] uppercase tracking-[0.3em] font-bold">Carrito</span>
+            <span className="hidden sm:inline text-[10px] uppercase tracking-[0.4em] font-bold">Carrito</span>
             <div className="relative">
-              <ShoppingBag size={18} strokeWidth={1.2} />
+              <ShoppingBag size={22} strokeWidth={1} />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-black text-white text-[7px] flex items-center justify-center rounded-full font-bold">
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-black text-white text-[8px] flex items-center justify-center rounded-full font-bold shadow-lg">
                   {cartCount}
                 </span>
               )}
@@ -70,10 +70,10 @@ export default function Navbar() {
           </button>
 
           <button 
-            className="hover:opacity-40 transition-opacity cursor-pointer"
+            className="hover:opacity-40 transition-opacity cursor-pointer ml-4 p-2 bg-black/5 rounded-full"
             onClick={() => setIsMobileMenuOpen(true)}
           >
-            <Menu size={22} strokeWidth={1} />
+            <Menu size={24} strokeWidth={1} />
           </button>
         </div>
       </div>
@@ -82,42 +82,44 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white z-[2000] flex flex-col p-10 md:p-24"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 200 }}
+            className="fixed inset-0 bg-white z-[3000] flex flex-col p-12 md:p-24 overflow-hidden"
           >
-            <div className="flex justify-between items-center mb-20">
-              <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Menú</span>
+            <div className="flex justify-between items-center mb-24">
+              <span className="text-[11px] uppercase tracking-[0.5em] font-bold text-black/40">Marcelacruz Atelier</span>
               <button 
-                className="text-black hover:rotate-90 transition-transform duration-500"
+                className="text-black p-4 bg-black/5 rounded-full hover:rotate-90 transition-transform duration-500"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <X size={28} strokeWidth={1} />
+                <X size={32} strokeWidth={1} />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-8 md:gap-12">
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
-                <Link href="/productos" className="text-5xl md:text-7xl font-serif uppercase tracking-tighter hover:italic transition-all" onClick={() => setIsMobileMenuOpen(false)}>Joyas</Link>
+            <nav className="flex flex-col gap-12 md:gap-16 mt-12">
+              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
+                <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Joyas</Link>
               </motion.div>
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
-                <Link href="/productos" className="text-5xl md:text-7xl font-serif uppercase tracking-tighter hover:italic transition-all" onClick={() => setIsMobileMenuOpen(false)}>Aromas</Link>
+              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
+                <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Aromas</Link>
               </motion.div>
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-                <Link href="/productos" className="text-5xl md:text-7xl font-serif uppercase tracking-tighter hover:italic transition-all" onClick={() => setIsMobileMenuOpen(false)}>Colección</Link>
+              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+                <Link href="/productos" className="text-6xl md:text-8xl font-serif uppercase tracking-tighter hover:italic transition-all inline-block" onClick={() => setIsMobileMenuOpen(false)}>Colección</Link>
               </motion.div>
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="mt-10 border-t border-black/5 pt-10">
-                <Link href="/#contacto" className="text-xs uppercase tracking-[0.4em] font-bold text-black/40 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contacto</Link>
+              <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="mt-16 border-t border-black/5 pt-16">
+                <Link href="/#nosotros" className="text-sm uppercase tracking-[0.5em] font-bold text-black/40 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Sobre el Atelier</Link>
               </motion.div>
             </nav>
 
-            <div className="mt-auto flex flex-col gap-4 text-[9px] uppercase tracking-[0.3em] font-bold text-black/30">
-               <span>© 2026 Marcelacruz Atelier</span>
-               <div className="flex gap-6">
-                  <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black cursor-pointer">Instagram</a>
-                  <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black cursor-pointer">WhatsApp</a>
+            <div className="mt-auto flex flex-col gap-6 text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 pb-12">
+               <div className="flex flex-wrap gap-10">
+                  <a href="https://instagram.com" target="_blank" className="hover:text-black transition-colors">Instagram</a>
+                  <a href="https://wa.me/56930313443" target="_blank" className="hover:text-black transition-colors">WhatsApp</a>
+                  <a href="/admin/login" className="hover:text-black transition-colors">Acceso Interno</a>
                </div>
+               <span className="text-[9px]">© 2026 Marcelacruz Atelier — Todos los derechos reservados</span>
             </div>
           </motion.div>
         )}
